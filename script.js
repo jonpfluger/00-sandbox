@@ -19,3 +19,10 @@ themeButtonEl.on("click", function() {
         .toggleClass('bg-dark text-light')
         .toggleClass('bg-light text-dark')
 })
+
+lotteryButtonEl.on('click', function() {
+    // generate random num 0 - 10,000
+    var randomNum = Math.floor(Math.random() * 10000)
+    // show num in lotteryNumberEl
+    lotteryNumberEl.text(randomNum)
+})
