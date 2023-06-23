@@ -8,5 +8,11 @@ var refreshButtonEl = $('#refresh-btn');
 var isDark = true;
 
 themeButtonEl.on("click", function() {
-    
+    if (isDark) {
+        isDark = false
+        $("body").addClass("bg-light text-dark").removeClass("bg-dark text-light")
+    } else {
+        isDark = true
+        $("body").addClass("bg-dark text-light").removeClass("bg-light text-dark")
+    }
 })

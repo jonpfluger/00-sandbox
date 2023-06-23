@@ -2,18 +2,33 @@ main {
     margin: 3rem auto;
     max-width: 90vw;
     width: 50ch;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 4rem;
-  }
-  
-  p {
+}
+
+p {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
-  }
-  
-  #lottery-number {
+}
+
+#lottery-number {
     font-size: 2rem;
-  }
-  
+}
+
+.bg-light {
+    background-color: #d9e9e8;
+}
+
+.bg-dark {
+    background-color: #1a1a1a;
+}
+
+.text-light {
+    color: #d9e9e8;
+}
+
+.text-dark {
+    color: #1a1a1a;
+}
