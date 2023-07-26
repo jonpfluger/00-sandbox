@@ -1,10 +1,17 @@
-var dog = {
-    name: "Zues",
-    age: 14,
-    sound: "bark",
-    makeSoundAfterTimeout() {
-        setTimeout(() => console.log(this.sound), 2000)
-    }
+// let x = 0
+
+// if (true) {
+//   let x = 10
+// }
+
+// console.log(x)
+
+let animals = ['monkey', 'cat', 'zebra']
+
+for (let i = 0; i < animals.length; i++) {
+  console.log(animals[i])
 }
 
-dog.makeSoundAfterTimeout()
+for (let i = 0; i < animals.length; i++) {
+  console.log(animals[i])
+}
