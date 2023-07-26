@@ -1,12 +1,22 @@
-const name = 'Jon'
-const position = 'TA'
+const animals = ['bat', 'dolphin', 'bear', 'monkey', 'bee', 'aardvark', 'jaguar']
 
-const getRandomNum = () => Math.random()
+console.log(animals.sort())
 
-const html = `<div>
-  <h2>Hello, I am ${name}</h2>
-  <p>I am a ${position} in the coding bootcamp.</p>
-  <p>${getRandomNum()}</p>
-</div>`
+// filter
+const animalsThatStartWithB = animals.filter(animal => animal[0] === 'b')
+console.log(animalsThatStartWithB)
 
-console.log(html)
+// map
+const animalNameLengths = animals.map(animal => animal.length)
+console.log(animalNameLengths)
+
+const animalObjects = animals.map(animal => {
+    return {
+        name: animal,
+        age: animal.length
+    }
+})
+console.log(animalObjects)
+
+const foundAnimal = animalObjects.find(animal => animal.age === 6)
+console.log(foundAnimal)
