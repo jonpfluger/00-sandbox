@@ -1,22 +1,18 @@
-const animals = ['bat', 'dolphin', 'bear', 'monkey', 'bee', 'aardvark', 'jaguar']
+// Write a function that takes in an array of integers and the array with duplicates removed
 
-console.log(animals.sort())
+// Ex:
+// Input: [1,2,2,3]
+// Output: [1,2,3]
 
-// filter
-const animalsThatStartWithB = animals.filter(animal => animal[0] === 'b')
-console.log(animalsThatStartWithB)
+// Input: [4,5,4,4,7,5]
+// Output: [4,5,7]
 
-// map
-const animalNameLengths = animals.map(animal => animal.length)
-console.log(animalNameLengths)
+// Input: [1,2,3,5]
+// Output: [1,2,3,5]
 
-const animalObjects = animals.map(animal => {
-    return {
-        name: animal,
-        age: animal.length
-    }
-})
-console.log(animalObjects)
 
-const foundAnimal = animalObjects.find(animal => animal.age === 6)
-console.log(foundAnimal)
+const removeDuplicates = arr => arr.filter((num, index) => arr.indexOf(num) === index)
+
+console.log(removeDuplicates([1,2,2,3]))
+console.log(removeDuplicates([4,5,4,4,7,5]))
+console.log(removeDuplicates([1,2,3,5]))
