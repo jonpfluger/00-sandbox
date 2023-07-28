@@ -1,4 +1,17 @@
-const name = process.argv[2]
-const favFood = process.argv[3]
+const operator = process.argv[2]
+const num1 = parseInt(process.argv[3])
+const num2 = parseInt(process.argv[4])
 
-console.log(`My name is ${name}. My favorite food is ${favFood}.`)
+let result = null
+
+if (operator === 'add') {
+  result = num1 + num2
+} else if (operator === 'subtract') {
+  result = num1 - num2
+} else if (operator === 'multiply') {
+  result = num1 * num2
+} else if (operator === 'divide') {
+  result = num1 / num2
+}
+
+console.log(result)
