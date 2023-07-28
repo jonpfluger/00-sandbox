@@ -1,19 +1,23 @@
-const fs = require("fs")
+const {add, subtract, multiply, divide, isEqual} = require('./mathLibrary')
 
-// fs.appendFile('./test.txt', `${process.argv[2]}\n`, err => {
-//     if (err) {
-//         throw err
-//     }
+const operator = process.argv[2]
+const num1 = parseInt(process.argv[3])
+const num2 = parseInt(process.argv[4])
 
-//     console.log('File saved!')
-// })
+if (!operator || parseInt(operator)) {
+    throw "Operator must be a string"
+}
 
-fs.readFile("./test.txt", 'utf-8', (err, data) => {
-    
-    if (err) {
-        throw err
-    }
-    
-    console.log(data)
+let result = null
 
-})
+if (operator === 'add') {
+  result = add(num1, num2)
+} else if (operator === 'subtract') {
+  result = subtract(num1, num2)
+} else if (operator === 'multiply') {
+  result = multiply(num1, num2)
+} else if (operator === 'divide') {
+  result = divide(num1, num2)
+}
+
+console.log(result)
