@@ -3,9 +3,10 @@ function Dog(name, age, breed) {
     this.name = name
     this.age = age
     this.breed = breed
-    this.nap = function() {
-        console.log(`${this.name} Zzzzzzzz`)
-    }
+}
+
+Dog.prototype.nap = function() {
+    console.log(`${this.name} Zzzzzzzz`)
 }
 
 // instantiation
