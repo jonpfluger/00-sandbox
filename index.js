@@ -1,14 +1,7 @@
-// ES5 Constructor Function (blueprint that creates objects)
-// function Dog(name, age, breed) {
-//     this.name = name
-//     this.age = age
-//     this.breed = breed
-// }
-
-// ES6 Class Declaration
-class Dog {
+// Parent class
+class Pet {
     alive = true
-    somethingElse = 1
+
     constructor(name, age, breed) {
         this.name = name
         this.age = age
@@ -19,17 +12,27 @@ class Dog {
     }
 }
 
-Dog.prototype.nap = function() {
-    console.log(`${this.name} Zzzzzzzz`)
+Pet.prototype.nap = function() {
+    console.log(`${this.name} Zzzzzzz`)
 }
 
-// instantiation
+// Child classes (sub-classes)
+class Cat extends Pet {
+    constructor(name, age, breed) {
+        super(name, age, breed)
+    }
+}
+
+class Dog extends Pet{
+    constructor(name, age, breed) {
+        super(name, age, breed)
+    }
+}
+
 const mabel = new Dog('Mabel', 1, 'Old English Bulldog')
 const alpha = new Dog('Alpha', 3, 'Terrior Pitbull')
 const bruno = new Dog('Bruno', 1.5, 'Terrior Pitbull')
+const ivy = new Cat('Ivy', 9, 'Long haired tabby')
 
-mabel.nap()
-alpha.nap()
-bruno.nap()
-
-mabel.run()
+ivy.run()
+ivy.nap()
