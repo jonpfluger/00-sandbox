@@ -10,6 +10,9 @@ class Pet {
     run() {
         console.log(`${this.name} has the zoomies!!!`)
     }
+    getNumLives() {
+        return 1
+    }
 }
 
 Pet.prototype.nap = function() {
@@ -20,6 +23,9 @@ Pet.prototype.nap = function() {
 class Cat extends Pet {
     constructor(name, age, breed) {
         super(name, age, breed)
+    }
+    getNumLives() {
+        return 9
     }
 }
 
@@ -34,5 +40,5 @@ const alpha = new Dog('Alpha', 3, 'Terrior Pitbull')
 const bruno = new Dog('Bruno', 1.5, 'Terrior Pitbull')
 const ivy = new Cat('Ivy', 9, 'Long haired tabby')
 
-ivy.run()
-ivy.nap()
+console.log(mabel.getNumLives())
+console.log(ivy.getNumLives())
