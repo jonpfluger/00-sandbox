@@ -28,6 +28,10 @@ app.get('/api/search-pets', (req, res) => {
   res.json(results)
 })
 
+app.post('/api/create-pet', (req, res) => {
+  res.send('Hi')
+})
+
 app.listen(PORT, () => {
   console.log(`Express listening on http://localhost:${PORT}`)
 })
