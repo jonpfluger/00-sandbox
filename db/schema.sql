@@ -9,7 +9,7 @@ CREATE TABLE pokemon (
   type VARCHAR(30) NOT NULL,
   moves INT,
   is_evolved BOOLEAN DEFAULT 0,
-  is_caught BOOLEAN DEFAULT 0,
+  trainer_id INT,
   PRIMARY KEY(id)
 );
 
@@ -20,11 +20,11 @@ CREATE TABLE moves (
   PRIMARY KEY(ID)
 );
 
-CREATE TABLE trainer (
+CREATE TABLE trainers (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(100) NOT NULL,
   age INT,
   num_badges INT DEFAULT 0,
-  date_added DATE NOT NULL DEFAULT NOW(),
+  date_added TIMESTAMP NOT NULL DEFAULT NOW(),
   PRIMARY KEY(id)
 );
