@@ -40,5 +40,10 @@ Trainer.init({
   //   defaultValue: DataTypes.NOW,
   // },
 }, {
+  sequelize,
+  modelName: 'Trainer',
   timestamps: true,
 })
+
+// TODO: make false before deploying to heroku
+sequelize.sync({ force: true })
