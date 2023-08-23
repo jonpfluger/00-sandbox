@@ -34,6 +34,7 @@ Pokemon.init({
 }, {
   sequelize,
   modelName: 'Pokemon',
+  timestamps: true,
   freezeTableName: true,
 })
 
