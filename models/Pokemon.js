@@ -13,7 +13,7 @@ Pokemon.init({
     allowNull: false,
   },
   isEvolved: {
-    types: DataTypes.BOOLEAN,
+    type: DataTypes.BOOLEAN,
     defaultValue: false,
   },
   moves: {
@@ -33,5 +33,8 @@ Pokemon.init({
   },
 }, {
   sequelize,
-  modelName: 'Pokemon'
+  modelName: 'Pokemon',
+  freezeTableName: true,
 })
+
+module.exports = Pokemon
