@@ -9,8 +9,20 @@ Trainer.hasOne(TrainerLicense, {
 })
 
 TrainerLicense.belongsTo(Trainer, {
-  foreignKey: 'trainerId'
+  as: 'license',
+  foreignKey: 'trainerId',
 })
+
+// one-to-many relationship
+Trainer.hasMany(Pokemon, {
+  foreignKey: 'trainerId',
+})
+
+Pokemon.belongsTo(Trainer, {
+  foreignKey: 'trainerId',
+})
+
+// many-to-many relationship
 
 module.exports = {
   Trainer,
