@@ -8,7 +8,9 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/dish/:slug', (req, res) => {
-  res.sendFile(path.join(__dirname, `../views/${req.params.slug}.html`));
+  const slug = req.params.slug
+  const foundDish = dishes.find(dish => dish.slug === slug)
+  res.render('dish', foundDish);
 });
 
 module.exports = router;
