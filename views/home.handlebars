@@ -6,27 +6,13 @@
   </div>
   <div>
     <ol>
-      <li>
-        French Bread with Brie Cheese
-      </li>
-      <li>
-        Cheese Plate with Spanish Chorizo
-      </li>
-      <li>
-        Fish Tacos
-      </li>
-      <li>
-        Tropical Fruit Salad
-      </li>
-      <li>
-        Pork Gyoza
-      </li>
-      <li>
-        Yebeg Tibs with Injera Bread
-      </li>
-      <li>
-        Cape Malay Curry
-      </li>
+      {{#each dishes}}
+        <li>
+          <a href="/dish/{{this.slug}}">
+            {{this.dish_name}}
+          </a>
+        </li>
+      {{/each}}
     </ol>
   </div>
 </div>
