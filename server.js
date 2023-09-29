@@ -12,11 +12,10 @@ const init = async () => {
   const db = client.db(dbName)
   const animalsCollection = db.collection('animals')
 
-  await animalsCollection.deleteMany(
-    { age: { $gt: 20 } }
-  )
+  // await
 
-  const animals = await animalsCollection.find().toArray()
+  const animals = await animalsCollection.find({ 'favoriteToy.color': 'red'}).toArray()
+  
   console.log(animals)
 }
 
