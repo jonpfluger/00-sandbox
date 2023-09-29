@@ -12,9 +12,9 @@ const init = async () => {
   const db = client.db(dbName)
   const animalsCollection = db.collection('animals')
 
-  await animalsCollection.updateOne(
-    { name: "Maddy" },
-    { $set: { name: "Manny" } }
+  await animalsCollection.updateMany(
+    { age: { $gt: 20 } },
+    { $set: { age: 100 } }
   )
 
   const animals = await animalsCollection.find().toArray()
