@@ -12,9 +12,8 @@ const init = async () => {
   const db = client.db(dbName)
   const animalsCollection = db.collection('animals')
 
-  await animalsCollection.updateMany(
-    { age: { $gt: 20 } },
-    { $set: { age: 100 } }
+  await animalsCollection.deleteOne(
+    { name: "Elly" }
   )
 
   const animals = await animalsCollection.find().toArray()
