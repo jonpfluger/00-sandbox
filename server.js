@@ -11,6 +11,9 @@ const init = async () => {
 
   const db = client.db(dbName)
   const animalsCollection = db.collection('animals')
+
+  const animals = await animalsCollection.find().toArray()
+  console.log(animals)
 }
 
 init()
