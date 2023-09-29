@@ -12,23 +12,10 @@ const init = async () => {
   const db = client.db(dbName)
   const animalsCollection = db.collection('animals')
 
-  await animalsCollection.insertMany([
-    {
-      type: "Monkey",
-      name: "Maddy",
-      age: 56,
-    },
-    {
-      type: "cat",
-      name: "Jables",
-      age: 11,
-    },
-    {
-      type: "Dog",
-      name: "Ben",
-      age: 3,
-    },
-  ])
+  await animalsCollection.updateOne(
+    { name: "Maddy" },
+    { $set: { name: "Manny" } }
+  )
 
   const animals = await animalsCollection.find().toArray()
   console.log(animals)
