@@ -12,10 +12,15 @@ const init = async () => {
   const db = client.db(dbName)
   const animalsCollection = db.collection('animals')
 
-  // await
 
-  const animals = await animalsCollection.find({ 'favoriteToy.color': 'red'}).toArray()
-  
+
+  const animals = await animalsCollection.find({})
+    // .count()
+    // .skip(2)
+    .sort({ "age": -1 }) // sort filter must be either 1 or -1
+    // .limit(3)
+  .toArray()
+
   console.log(animals)
 }
 
