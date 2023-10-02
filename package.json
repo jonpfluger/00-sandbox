@@ -1,5 +1,33 @@
 {
+  "name": "00-sandbox",
+  "version": "1.0.0",
+  "description": "This repo holds random snippets of code as well as notes to myself.",
+  "main": "server.js",
   "dependencies": {
-    "mongodb": "^6.1.0"
-  }
+    "bson": "^6.1.0",
+    "memory-pager": "^1.5.0",
+    "mongodb": "^6.1.0",
+    "mongodb-connection-string-url": "^2.6.0",
+    "mongoose": "^7.5.3",
+    "punycode": "^2.3.0",
+    "sparse-bitfield": "^3.0.3",
+    "tr46": "^3.0.0",
+    "webidl-conversions": "^7.0.0",
+    "whatwg-url": "^11.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonpfluger/00-sandbox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonpfluger/00-sandbox/issues"
+  },
+  "homepage": "https://github.com/jonpfluger/00-sandbox#readme"
 }
