@@ -1,7 +1,7 @@
 const connection = require('./config/connection')
 const { Department, Item } = require('./models')
 
-// create
+// CREATE
 
 // Item.create({
 //   name: "Raisins",
@@ -10,12 +10,20 @@ const { Department, Item } = require('./models')
 //   expirationDate: new Date('2023-10-27')
 // }).then(savedItem => console.log(savedItem))
 
-// read
+// READ
 
 // Item.find({ name: 'Bananas' }, 'price quantity') // -expirationDate
 //   .then(item => console.log(item))
 
-// update
+// UPDATE
 
 // Item.updateMany({ name: 'Raisins' }, { price: 0.2 })
 //   .then(updatedItem => console.log(updatedItem))
+
+Item.findByIdAndUpdate('651b5d9de5f7b79aae323474', {
+  name: "Beef",
+  price: 5,
+  quantity: 100,
+}, {
+  new: true,
+}).then(updatedItem => console.log(updatedItem))
