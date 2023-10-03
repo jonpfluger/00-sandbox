@@ -1,11 +1,9 @@
 const connection = require('./config/connection')
 const { Department, Item } = require('./models')
 
-const item = new Item({
-  name: "Bananas",
-  price: 0.67,
-  quantity: 100,
-  expirationDate: new Date('2023-10-20')
-})
-
-console.log(item)
+Item.create({
+  name: "Raisins",
+  price: 0.01,
+  quantity: 10000,
+  expirationDate: new Date('2023-10-27')
+}).then(savedItem => console.log(savedItem))
