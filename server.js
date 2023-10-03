@@ -20,10 +20,15 @@ const { Department, Item } = require('./models')
 // Item.updateMany({ name: 'Raisins' }, { price: 0.2 })
 //   .then(updatedItem => console.log(updatedItem))
 
-Item.findByIdAndUpdate('651b5d9de5f7b79aae323474', {
-  name: "Beef",
-  price: 5,
-  quantity: 100,
-}, {
-  new: true,
-}).then(updatedItem => console.log(updatedItem))
+// Item.findByIdAndUpdate('651b5d9de5f7b79aae323474', {
+//   name: "Beef",
+//   price: 5,
+//   quantity: 100,
+// }, {
+//   new: true,
+// }).then(updatedItem => console.log(updatedItem))
+
+// DELETE
+
+Item.findByIdAndDelete("651b5d9de5f7b79aae323474")
+  .then(result => console.log(result))
