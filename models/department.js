@@ -11,6 +11,12 @@ const departmentSchema = new Schema({
     default: true,
   },
   employees: [ employeeSchema ],
+}, {
+  methods: {
+    getEmployeeCount() {
+      return this.employees.length
+    },
+  },
 })
 
 const Department = model('Department', departmentSchema)
