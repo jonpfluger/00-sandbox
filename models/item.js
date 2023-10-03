@@ -14,6 +14,10 @@ const itemSchema = new Schema({
     type: Number,
     default: 0,
   },
+  onSale: {
+    type: Boolean,
+    default: false,
+  },
   // TODO: dynamic default date
   expirationDate: {
     type: Date,

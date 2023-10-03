@@ -1,39 +1,7 @@
-const { default: test } = require('node:test')
-const connection = require('./config/connection')
+require('./config/connection')
 const { Department, Item } = require('./models')
 
-const init = async () => {
-
-  // const allItems = await Item.find()
-  // console.log(allItems)
-
-  // let maxPrice = 0
-
-  // for (const item of items) {
-  //   if (item.price > maxPrice) {
-  //     maxPrice = item.price
-  //   }
-  // }
-
-  // console.log(maxPrice)
-
-  // const result = await Item.aggregate([
-  //   {
-  //     $match: {
-  //       quantity: { $gte: 20 }
-  //     }
-  //   },
-  //   {
-  //     $group: {
-  //       _id: null,
-  //       maxPrice: { $max: '$price' },
-  //       allPricesTotal: { $sum : '$price' }
-  //     }
-  //   }
-  // ])
-
-  // console.log(result)
-
+const seedDepartments = async () => {
   await Department.deleteMany({})
 
   const deptData = [
@@ -42,53 +10,70 @@ const init = async () => {
       employees: [
         { name: 'Josh' },
         { name: 'David' },
-        { name: 'Max' },
-      ],
+        { name: 'Max' }
+      ]
     },
     {
       name: "Produce",
       employees: [
-        { name: 'Nathan' },
+        { name: 'Liz' },
         { name: 'Paul' },
-        { name: 'Annika' },
-      ],
+        { name: 'Adam' }
+      ]
     },
     {
       name: "Deli",
       employees: [
-        { name: 'Jon' },
-        { name: 'Jason' },
-        { name: 'Jenny' },
-      ],
-    },
+        { name: 'Nathan' },
+        { name: 'Annika' },
+        { name: 'Tor' }
+      ]
+    }
   ]
 
-  const dept = await Department.insertMany(deptData)
+  await Department.insertMany(deptData)
+}
 
-  const allEmployees = await Department.aggregate([
-    { $unwind: '$employees' },
+
+const seedItems = async () => {
+  await Item.deleteMany({})
+
+  const itemData = [
     {
-      $group: {
-        _id: null,
-        employees: { $push: '$employees' },
-      }
-    }
-  ])
+      name: 'Bananas',
+      price: 0.50,
+      quantity: 100,
+      onSale: false,
+    }, 
+    {
+      name: 'Raisins',
+      price: 0.02,
+      quantity: 10000,
+      onSale: true,
+    }, 
+    {
+      name: 'Donuts',
+      price: 0.75,
+      quantity: 50,
+      onSale: false,
+    }, 
+    {
+      name: 'Ham',
+      price: 4,
+      quantity: 60,
+      onSale: true,
+    }, 
+  ]
 
-  console.log(JSON.stringify(allEmployees))
+  await Item.insertMany(itemData)
+}
 
-  // const dept = await Department.create({
-  //   name: "Produce",
-    // employees: [
-    //   { name: 'Josh' },
-    //   { name: 'David' },
-    //   { name: 'Max' },
-    // ],
-  // })
+const init = async () => {
+  await seedDepartments()
+  await seedItems()
 
-  // console.log(`There are ${dept.getEmployeeCount()} employees in this department.`)
-
-  // dept.alertCleanup()
+  const item = await Item.findOne()
+  console.log(item)
 
 }
 
