@@ -65,6 +65,18 @@ const init = async () => {
 
   const dept = await Department.insertMany(deptData)
 
+  const allEmployees = await Department.aggregate([
+    { $unwind: '$employees' },
+    {
+      $group: {
+        _id: null,
+        employees: { $push: '$employees' },
+      }
+    }
+  ])
+
+  console.log(JSON.stringify(allEmployees))
+
   // const dept = await Department.create({
   //   name: "Produce",
     // employees: [
