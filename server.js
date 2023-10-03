@@ -17,28 +17,61 @@ const init = async () => {
 
   // console.log(maxPrice)
 
-  const result = await Item.aggregate([
+  // const result = await Item.aggregate([
+  //   {
+  //     $match: {
+  //       quantity: { $gte: 20 }
+  //     }
+  //   },
+  //   {
+  //     $group: {
+  //       _id: null,
+  //       maxPrice: { $max: '$price' },
+  //       allPricesTotal: { $sum : '$price' }
+  //     }
+  //   }
+  // ])
+
+  // console.log(result)
+
+  await Department.deleteMany({})
+
+  const deptData = [
     {
-      $match: {
-        quantity: { $gte: 20 }
-      }
+      name: "Bakery",
+      employees: [
+        { name: 'Josh' },
+        { name: 'David' },
+        { name: 'Max' },
+      ],
     },
     {
-      $group: {
-        _id: null,
-        maxPrice: { $max: '$price' },
-        allPricesTotal: { $sum : '$price' }
-      }
-    }
-  ])
+      name: "Produce",
+      employees: [
+        { name: 'Nathan' },
+        { name: 'Paul' },
+        { name: 'Annika' },
+      ],
+    },
+    {
+      name: "Deli",
+      employees: [
+        { name: 'Jon' },
+        { name: 'Jason' },
+        { name: 'Jenny' },
+      ],
+    },
+  ]
+
+  const dept = await Department.insertMany(deptData)
 
   // const dept = await Department.create({
   //   name: "Produce",
-  //   employees: [
-  //     { name: 'Josh' },
-  //     { name: 'David' },
-  //     { name: 'Max' },
-  //   ],
+    // employees: [
+    //   { name: 'Josh' },
+    //   { name: 'David' },
+    //   { name: 'Max' },
+    // ],
   // })
 
   // console.log(`There are ${dept.getEmployeeCount()} employees in this department.`)
