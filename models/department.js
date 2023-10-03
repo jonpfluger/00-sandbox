@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose')
+const employeeSchema = require('./schemas/employee')
 
 const departmentSchema = new Schema({
   name: {
@@ -9,14 +10,7 @@ const departmentSchema = new Schema({
     type: Boolean,
     default: true,
   },
-  employees: [
-    {
-      name: {
-        type: String,
-        required: true,
-      }
-    },
-  ],
+  employees: [ employeeSchema ],
 })
 
 const Department = model('Department', departmentSchema)
