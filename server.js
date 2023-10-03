@@ -14,6 +14,8 @@ const init = async () => {
 
   console.log(`There are ${dept.getEmployeeCount()} employees in this department.`)
 
+  dept.alertCleanup()
+
 }
 
 init()

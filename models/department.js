@@ -16,6 +16,9 @@ const departmentSchema = new Schema({
     getEmployeeCount() {
       return this.employees.length
     },
+    alertCleanup() {
+      console.log(`Cleanup in the ${this.name} department!`)
+    }
   },
 })
 
