@@ -14,3 +14,8 @@ const { Department, Item } = require('./models')
 
 // Item.find({ name: 'Bananas' }, 'price quantity') // -expirationDate
 //   .then(item => console.log(item))
+
+// update
+
+// Item.updateMany({ name: 'Raisins' }, { price: 0.2 })
+//   .then(updatedItem => console.log(updatedItem))
