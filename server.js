@@ -72,8 +72,8 @@ const init = async () => {
   await seedDepartments()
   await seedItems()
 
-  const item = await Item.findOne()
-  console.log(item)
+  const item = await Item.findOne({ onSale: true })
+  console.log(item.fullTitle)
 
 }
 

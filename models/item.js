@@ -25,6 +25,11 @@ const itemSchema = new Schema({
   },
 })
 
+itemSchema.virtual('fullTitle')
+  .get(function() {
+    return `${this.name} - $${this.price} ${this.onSale ? '- SALE!' : ''}`
+  })
+
 const Item = model('Item', itemSchema)
 
 module.exports = Item
