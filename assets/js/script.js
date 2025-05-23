@@ -9,19 +9,40 @@ const saveMode = function (mode) {
     localStorage.setItem('mode', mode)
 }
 
-const handleModeToggle = function () {
-    const mode = readMode()
-    console.log('mode', mode);
-
-    let nextMode;
+const applyMode = function (mode) {
+    let icon, bgColor
 
     if (mode === 'light') {
-      nextMode = 'dark';
+        icon = '☀️'
+        bgColor = '#ffffff'
     } else {
-      nextMode = 'light';
+        icon = '🌒'
+        bgColor = '#505050'
     }
 
-    saveMode(nextMode);
+    modeBtnEl.textContent = icon
+
+    document.body.classList = mode
+    document.body.style.backgroundColor = bgColor
 }
 
-modeBtnEl.addEventListener('click', handleModeToggle);
+const handleModeToggle = function () {
+    const mode = readMode()
+    console.log('mode', mode)
+
+    let nextMode
+
+    if (mode === 'light') {
+      nextMode = 'dark'
+    } else {
+      nextMode = 'light'
+    }
+
+    applyMode(nextMode)
+
+    saveMode(nextMode)
+}
+
+applyMode(readMode())
+
+modeBtnEl.addEventListener('click', handleModeToggle)

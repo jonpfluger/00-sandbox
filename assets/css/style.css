@@ -1,0 +1,9 @@
+* {
+    transition: background-color ease-in .5s;
+}
+
+#toggle {
+    background: transparent;
+    border: none;
+    font-size: 1.52em;
+}
