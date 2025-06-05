@@ -6,6 +6,8 @@
 
 main {
     margin: 0 10%;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 header, footer {
@@ -21,8 +23,12 @@ footer {
     bottom: 0;
 }
 
+#hero {
+    max-width: 100%;
+}
+
 #toggle {
     background: transparent;
-    border: 1px solid red;
+    border: none;
     font-size: 1.52em;
 }
