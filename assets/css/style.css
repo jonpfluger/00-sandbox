@@ -1,34 +1,4 @@
-* {
-    font-family: sans-serif;
-    font-size: 18px;;
-    transition: background-color ease-in .5s;
-}
-
-main {
-    margin: 0 10%;
-    display: flex;
-    flex-flow: column wrap;
-}
-
-header, footer {
-    background: lightgrey;
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-}
-
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-}
-
-#hero {
-    max-width: 100%;
-}
-
-#toggle {
-    background: transparent;
-    border: none;
-    font-size: 1.52em;
+body {
+    background: black;
+    color: white;
 }
